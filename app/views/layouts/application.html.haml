@@ -2,6 +2,11 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    /responsive
+    %meta{content: "width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0", name: "viewport"}
+    /web font
+    %link{:href => "https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap", :rel => "stylesheet"}/
+
     %title MixApp
     = csrf_meta_tags
     = csp_meta_tag
@@ -12,7 +17,8 @@
   
 
   %header
-    %p ここはヘッダーです。
+    .notice
+      %p ここはヘッダーです。
   
   
   
@@ -20,6 +26,7 @@
 
   
   %footer
-    %p ここはフッターです。
+    .notice
+      %p ここはフッターです。
 
 
