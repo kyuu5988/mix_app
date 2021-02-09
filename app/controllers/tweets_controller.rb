@@ -19,7 +19,8 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params#4
-    params.require(:tweet).permit(:text)#.merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text, :image)#.merge(user_id: current_user.id)
+    # :imageはactive storage用
   end
 
 

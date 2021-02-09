@@ -1,7 +1,14 @@
 .content_post
   = form_with(model: @tweet, local: true) do |form|
-    %h3 投稿する
-    = form.text_area :text, placeholder: "コメントを書いてください", rows: "10"
-    = form.submit "送信"
+    
+    .post_mes
+      %h3 ここは投稿するページです
+      = form.text_area :text, placeholder: "コメントを書いてください", rows: "10"
+    
+    .post_img
+      = form.file_field :image
+    
+    .post_btn
+      = form.submit "送信"
 
     
