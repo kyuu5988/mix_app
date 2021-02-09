@@ -65,3 +65,7 @@ gem 'active_hash'
 # haml test
 gem 'haml-rails'
 gem 'erb2haml'
+#画像投稿関連
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+
