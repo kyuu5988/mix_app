@@ -15,7 +15,24 @@
  */
 
 
+ header,footer {
+   background-color: darkgray;
+ }
+
+ a {
+  text-decoration: none;
+  background-color: black;
+  color: aquamarine;
+ }
+
+ a:hover {
+  color: #57C3E9;
+}
+
+ 
  .notice{
    color: cornflowerblue;
    font-size: small;
  }
+
+ 

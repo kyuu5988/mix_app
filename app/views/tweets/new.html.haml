@@ -1,0 +1,7 @@
+.content_post
+  = form_with(model: @tweet, local: true) do |form|
+    %h3 投稿する
+    = form.text_area :text, placeholder: "コメントを書いてください", rows: "10"
+    = form.submit "送信"
+
+    
