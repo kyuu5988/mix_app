@@ -12,10 +12,10 @@
   margin: 20px;
 }
 
-.post_btn, .post_img, .post_mes {
-  // background-color: black;
-  // color: aliceblue;
+.mes_inner {
+  padding: 2px;
 }
+
 
 .main_content {
   display: flex;
@@ -46,18 +46,31 @@
 .content_card {
   border: 2px dotted green;
   width: 324px;
-  height: 404px;
+  height: 424px;
   margin: 5px;
 }
 
+.inner_menu{
+  display: flex;
+  justify-content: flex-end;
+  background-color: lightpink;
+  height: 20px;
+}
+
 .content_text {
-  white-space: pre-wrap;
+  // white-space: pre-line;
   height: 160px;
   background-color: lightpink;
   color: aliceblue;
   overflow: auto;
+  // display: flex;
 }
 
-
+.inner_btn{
+  background-color: cadetblue;
+  color: aliceblue;
+  margin: 0px 3px;
+  padding: 1px;
+}
 
 

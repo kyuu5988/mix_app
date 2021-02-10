@@ -4,7 +4,7 @@
       
     .post_mes
       %h3 ここは投稿するページです
-      = form.text_area :text, placeholder: "コメントを書いてください", rows: "10"
+      = form.text_area :text, placeholder: "コメントを書いてください", rows: "10", class: "mes_inner"
       
     .post_img
       = form.file_field :image

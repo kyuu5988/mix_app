@@ -4,7 +4,8 @@ class TweetsController < ApplicationController
 
 
   def index#1
-    @tweets = Tweet.all#1
+    #@tweets = Tweet.all#1
+    @tweets = Tweet.all.order("created_at DESC")
   end
 
   def new#2
@@ -12,7 +13,17 @@ class TweetsController < ApplicationController
   end
 
   def create#3    
-    Tweet.create(tweet_params)  
+    Tweet.create(tweet_params)
+
+    redirect_to root_path
+  end
+
+  def destroy#5
+    tweet = Tweet.find(params[:id])
+    #binding.pry #検証用
+    tweet.destroy
+
+    redirect_to root_path
   end
 
 
