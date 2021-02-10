@@ -9,6 +9,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 20px;
 }
 
 .post_btn, .post_img, .post_mes {
@@ -18,7 +19,7 @@
 
 .main_content {
   display: flex;
-  height: calc(100vh - 200px);
+  height: calc(100vh - 100px);
 }
 
 
@@ -31,16 +32,32 @@
 .content_view {
   border: 2px dotted lightcoral;
   overflow: auto;
+  height: 100%;
   width: calc(100vw - 150px);
   display: flex;
+  flex-wrap: wrap;
+}
+
+.content_inner {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .content_card {
   border: 2px dotted green;
   width: 324px;
-  height: 340px;
+  height: 404px;
   margin: 5px;
 }
+
+.content_text {
+  white-space: pre-wrap;
+  height: 160px;
+  background-color: lightpink;
+  color: aliceblue;
+  overflow: auto;
+}
+
 
 
 

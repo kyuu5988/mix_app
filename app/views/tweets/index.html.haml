@@ -1,11 +1,14 @@
 
 .content_view
-  %p ここにはメインコンテンツが表示される(index.html.hamlの右側)
-  - @tweets.each do |tweet|
-    .content_card
-      .content_text
-        %p= tweet.text
+  .content_title
+    %p ここにはメインコンテンツが表示される(index.html.haml)
+  
+  .content_inner
+    - @tweets.each do |tweet|
+      .content_card
+        .content_text
+          %p= tweet.text
 
-      .content_img
-        = image_tag tweet.image.variant(resize:'320x240') if tweet.image.attached?
+        .content_img
+          = image_tag tweet.image.variant(resize:'320x240') if tweet.image.attached?
 

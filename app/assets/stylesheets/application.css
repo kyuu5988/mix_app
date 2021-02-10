@@ -20,19 +20,36 @@
 
  header,footer {
    background-color: darkgray;
-   height: 100px;
+   height: 50px;
+   display: flex;
  }
 
  a {
   text-decoration: none;
   background-color: black;
-  color: aquamarine;
  }
 
  a:hover {
   color: #57C3E9;
 }
 
+.main_logo {
+  font-size: x-large;
+  color: lightsalmon;
+  margin: 5px;
+}
+
+.menu_btn {
+  background-color: rgb(59, 59, 207);
+  color: pink;
+  margin: 0px 5px;
+  padding: 5px;
+}
+
+.header_menu {
+  display: flex;
+  margin: 10px 20px;
+}
  
  .notice{
    color: darkred;
