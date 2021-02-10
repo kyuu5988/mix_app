@@ -1,4 +1,3 @@
-
 .content_view
   .content_title
     %p ここにはメインコンテンツが表示される(index.html.haml)
@@ -7,8 +6,10 @@
     - @tweets.each do |tweet|
       .content_card
         .inner_menu
-          %p.inner_btn 詳細
-          %p.inner_btn 編集
+          = link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
+
+
+          = link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
           = link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
 
         .content_text

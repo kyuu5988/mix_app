@@ -4,6 +4,7 @@
       
     .post_mes
       %h3 ここは投稿するページです
+      %p.notice= flash[:not_input]#コントローラーからのメッセージ
       = form.text_area :text, placeholder: "コメントを書いてください", rows: "10", class: "mes_inner"
       
     .post_img

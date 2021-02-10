@@ -43,27 +43,32 @@
   flex-wrap: wrap;
 }
 
-.content_card {
+.content_card, .content_card_show {
   border: 2px dotted green;
   width: 324px;
   height: 424px;
   margin: 5px;
 }
+.content_card_show {
+  height: 470px;
+}
 
 .inner_menu{
   display: flex;
   justify-content: flex-end;
-  background-color: lightpink;
+  background-color: rgb(231, 143, 156);
   height: 20px;
 }
 
-.content_text {
-  // white-space: pre-line;
+.content_text, .content_text_show {
   height: 160px;
   background-color: lightpink;
   color: aliceblue;
   overflow: auto;
-  // display: flex;
+}
+
+.content_text_show {
+  height: 446px;
 }
 
 .inner_btn{

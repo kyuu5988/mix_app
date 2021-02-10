@@ -20,12 +20,15 @@
     .main_logo
       %a.main_logo{:href => "/"} Mix_app
 
+    .notice
+      = notice#コントローラーからのメッセージ
 
     .header_menu
       = link_to "投稿する", new_tweet_path, class: "menu_btn"
       %p.menu_btn メニューb
       %p.menu_btn メニューc  
   
+
   .main_content
     .left_main_menu
       %p ここはメインメニュー。(app...html.hamlの左側)
