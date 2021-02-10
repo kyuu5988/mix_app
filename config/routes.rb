@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   #1 予めメインのモデル・コントローラー作成する
   # コントローラーで indexアクションを定義（空欄）
   root to: 'tweets#index'#ここがtop pageとなる
