@@ -33,6 +33,16 @@ class TweetsController < ApplicationController
   def edit#6  
   end
 
+  def update#7
+    tweet = Tweet.find(params[:id])
+    if tweet.update(tweet_params)
+      redirect_to tweet_path(params[:id]), notice: '投稿が更新されました。'
+    else
+      flash[:not_input] = "何も入力されていません。"
+      render :edit
+    end
+  end
+
   def show#6    
   end
 

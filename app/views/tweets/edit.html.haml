@@ -2,14 +2,15 @@
   = form_with(model: @tweet, local: true) do |form|
       
     .post_mes
-      %h3 ここはnew.html.haml
+      %h3 ここはedit.html.haml
       %p.notice= flash[:not_input]#コントローラーからのメッセージ
       = form.text_area :text, placeholder: "コメントを書いてください", rows: "10", class: "mes_inner"
       
     .post_img
       = form.file_field :image
+      %p 画像の変更が無い場合はそのまま更新
       
     .post_btn
-      = form.submit "送信"
+      = form.submit "更新"
 
     
