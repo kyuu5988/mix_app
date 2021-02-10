@@ -24,7 +24,12 @@
       = link_to "投稿する", new_tweet_path  
   
   
-  = yield
+  .main_content
+    .left_main_menu
+      %p ここはメインメニュー。(app...html.hamlの左側)
+
+    .rigth_content
+      = yield
 
   
   %footer
