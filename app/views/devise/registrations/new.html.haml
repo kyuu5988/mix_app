@@ -1,21 +1,53 @@
-%h2 Sign up
+%h2 ユーザー新規登録
+
 = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
   = render "devise/shared/error_messages", resource: resource
+
   .field
-    = f.label :email
+    = f.label :本名（姓名）
     %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
+    = f.text_field :name, class:"", id:"", placeholder:"例) 山田　花子", maxlength:"35",autofocus: true, autocomplete: "off"
+
   .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+    = f.label :フリガナ
     %br/
-    = f.password_field :password, autocomplete: "new-password"
+    = f.text_field :kana, class:"", id:"", placeholder:"例) ヤマダ　ハナコ", maxlength:"35", autocomplete: "off"
+
   .field
-    = f.label :password_confirmation
+    = f.label :生年月日
     %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
+    = f.date_field :birth, class:"", id:"", value: "2000-01-01"
+
+  .field
+    = f.label :性別
+    %br/
+    = f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"", id:""})
+
+  .field
+    = f.label :テーマカラー
+    %br/
+    = f.collection_select(:them_col, ThemCol.all, :aaa, :name, {}, {class:"", id:""})
+
+  .field
+    = f.label :ニックネーム
+    %br/
+    = f.text_field :nick_name, class:"", id:"", placeholder:"サイト内に表示されます", maxlength:"35", autocomplete: "off"
+
+  .field
+    = f.label :メールアドレス
+    %br/
+    = f.email_field :email, class:"", id:"", autofocus: true, autocomplete: "email"
+  
+  .field
+    = f.label :パスワード
+    %br/
+    = f.password_field :password, class:"", id:"", placeholder:"8文字以上", autocomplete: "new-password"
+  
+  .field
+    = f.label :同じパスワードを再度入力
+    %br/
+    = f.password_field :password_confirmation, class:"", id:"", placeholder:"確認の為に再入力", autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "会員登録", class:""
+
+/= render "devise/shared/links"

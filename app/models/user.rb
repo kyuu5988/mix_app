@@ -3,7 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   #↓必要に応じて機能を追加
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable, :timeoutable, :trackable
+         :recoverable, :rememberable, :validatable#, :confirmable, :timeoutable, :trackable
+  #最初は認証無しで実装
 
   #pic2
   validates :name, :kana, :birth, :gender, :nick_name, :them_col, presence: true
