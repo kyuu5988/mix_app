@@ -1,6 +1,7 @@
 .content_post
   = form_with(model: @tweet, local: true) do |form|
-      
+
+        
     .post_mes
       %h3 ここはedit.html.haml
       %p.notice= flash[:not_input]#コントローラーからのメッセージ
@@ -12,5 +13,10 @@
       
     .post_btn
       = form.submit "更新"
+
+
+  .content_img
+    %p 現在の画像
+    = image_tag @tweet.image.variant(resize:'640x480') if @tweet.image.attached?
 
     
