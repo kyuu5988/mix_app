@@ -11,15 +11,14 @@ class User < ApplicationRecord
   has_many :comments
 
   
-  validates :name, :kana, :birth, :gender, :nick_name, :them_col, presence: true
+  validates :name, :kana, :birth, :gender, :nick_name, :color, presence: true
   
 
   #active hash
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :gender
-  #belongs_to_active_hash :them_col
-  #↑現状は on にするとエラーになる
-  #原因不明（DBの型？あるいはからむ名に_idがついて無いの違いがある
+  belongs_to_active_hash :color
+  #DBの型がstringあるいはからむ名に_idがついて無いなどでエラーになったことある
 
 
 end

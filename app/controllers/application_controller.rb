@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   private
   #devise userテーブルのカラム保存許可
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :kana, :birth, :gender_id, :nick_name, :them_col])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :kana, :birth, :gender_id, :nick_name, :color_id])
   end
 end
