@@ -57,4 +57,7 @@
    font-size: small;
  }
 
- 
+ .alert{
+  color: darkblue;
+  font-size: small;
+}

@@ -27,6 +27,7 @@
     = f.label :テーマカラー
     %br/
     = f.collection_select(:them_col, ThemCol.all, :aaa, :name, {}, {class:"", id:""})
+    /= f.collection_select(:カラム名, クラス.all, :保存される値, :表示される値, {include_blank: true}, {class:"genre-select"})
 
   .field
     = f.label :ニックネーム

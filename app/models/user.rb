@@ -13,7 +13,9 @@ class User < ApplicationRecord
   #active hash
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :gender
-  belongs_to_active_hash :them_col
+  #belongs_to_active_hash :them_col
+  #↑現状は on にするとエラーになる
+  #原因不明（DBの型？あるいはからむ名に_idがついて無いの違いがある
 
 
 end
