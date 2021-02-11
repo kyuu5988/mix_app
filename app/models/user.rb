@@ -6,7 +6,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable#, :confirmable, :timeoutable, :trackable
   #最初は認証無しで実装
 
-  #pic2
+  #アソシエーション
+  has_many :tweets
+  has_many :comments
+
+  
   validates :name, :kana, :birth, :gender, :nick_name, :them_col, presence: true
   
 

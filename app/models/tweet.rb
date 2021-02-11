@@ -4,6 +4,11 @@ class Tweet < ApplicationRecord
   has_one_attached :image
   #↑を記述したらコントローラーで保存の許可をする
 
+  
+  #3 アソシエーション
+  belongs_to :user
+  has_many :comments
+
 
   #1
   validates :text, presence: true, unless: :was_attached?

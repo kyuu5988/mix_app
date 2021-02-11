@@ -6,11 +6,18 @@
     - @tweets.each do |tweet|
       .content_card
         .inner_menu
-          = link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
+          /for test
+          /%p.inner_btn ボタン1
 
+          .inner_name
+            %p= "#{tweet.user.nick_name}さん"
+          
+          .inner_btns
+            = link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
 
-          = link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
-          = link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
+            - if user_signed_in? && current_user.id == tweet.user_id
+              = link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
+              = link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
 
         .content_text
           %p= simple_format(tweet.text)

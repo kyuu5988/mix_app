@@ -55,9 +55,9 @@
 
 .inner_menu{
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   background-color: rgb(231, 143, 156);
-  height: 20px;
+  height: 24px;
 }
 
 .content_text, .content_text_show {
@@ -75,7 +75,8 @@
   background-color: cadetblue;
   color: aliceblue;
   margin: 0px 3px;
-  padding: 1px;
+  padding: 1px 5px;
+  font-size: smaller;
 }
 
 

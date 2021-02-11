@@ -1,10 +1,11 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show]#6
-
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index#1
     #@tweets = Tweet.all#1-1
-    @tweets = Tweet.all.order("created_at DESC")#1-2
+    #@tweets = Tweet.all.order("created_at DESC")#1-2
+    @tweets = Tweet.includes(:user).order("created_at DESC")#1-3
   end
 
   def new#2
@@ -50,14 +51,19 @@ class TweetsController < ApplicationController
   private
 
   def tweet_params#4
-    params.require(:tweet).permit(:text, :image)#.merge(user_id: current_user.id)
+    params.require(:tweet).permit(:text, :image).merge(user_id: current_user.id)
     # :imageはactive storage用
+    #.merge(user_id: current_user.id)はuser機能追加後に記述
   end
 
   def set_tweet#6
     @tweet = Tweet.find(params[:id])
   end
 
-
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
 
 end
