@@ -12,8 +12,10 @@ Rails.application.routes.draw do
   
   #3 検索の機能を追加
   resources :tweets do
-    #resources :comments, only: :create #pic2での記述
+    resources :comments, only: :create #pic2での記述参考
+    #↑ルーティングのネストと言う
 
+    #検索用
     collection do
       get 'kensaku'
     end

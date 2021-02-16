@@ -21,3 +21,16 @@
     
     %p= "最終更新日：#{@tweet.updated_at}"
 
+    .content_msg
+
+      - if current_user
+        = form_with(model: [@tweet, @comment], local: true) do |f|
+          =f.text_area :msg, placeholder: "コメントをどうぞ", rows: "2"
+          =f.submit "コメントを書く（削除出来ません。）"
+      - else
+        %p ログインをするとコメントを残せるよ！
+      
+      .msg_all
+        - if @comments
+          - @comments.each do |cmt|
+            %p= "#{cmt.user.nick_name}：#{cmt.msg}"

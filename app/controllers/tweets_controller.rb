@@ -44,8 +44,13 @@ class TweetsController < ApplicationController
     end
   end
 
-  def show#6    
+  
+  def show#6
+    #comment機能を追加してからの記述
+    @comment = Comment.new
+    @comments = @tweet.comments.includes(:user)
   end
+
 
   def kensaku
     #render plain: "kensakuアクションが動作した" #動作確認用
