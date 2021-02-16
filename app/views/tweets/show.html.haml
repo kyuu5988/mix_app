@@ -18,5 +18,6 @@
 
     .content_img
       = image_tag @tweet.image.variant(resize:'640x480') if @tweet.image.attached?
-
+    
+    %p= "最終更新日：#{@tweet.updated_at}"
 

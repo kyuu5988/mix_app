@@ -6,9 +6,17 @@ Rails.application.routes.draw do
   #1 予めメインのモデル・コントローラー作成する
   # コントローラーで indexアクションを定義（空欄）
   root to: 'tweets#index'#ここがtop pageとなる
-  resources :tweets
   
-
+  #2 基本の７つのアクションのみ
+  # resources :tweets
+  
+  #3 検索の機能を追加
+  resources :tweets do
+    collection do
+      get 'kensaku'
+    end
+  end
+  
 
   
 end

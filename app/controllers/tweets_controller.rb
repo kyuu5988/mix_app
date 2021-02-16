@@ -1,6 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:edit, :show]#6
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :kensaku]
 
   def index#1
     #@tweets = Tweet.all#1-1
@@ -45,6 +45,13 @@ class TweetsController < ApplicationController
   end
 
   def show#6    
+  end
+
+  def kensaku
+    #render plain: "kensakuアクションが動作した" #動作確認用
+    #binding.pry #検証用 (ターミナルで"params"と入れるとデータ確認できる)
+    @tweets = Tweet.search(params[:key_wd])
+    #インスタンス変数 = モデル.メソッド(検索内容)→モデル内のメソッド呼び出し
   end
 
 

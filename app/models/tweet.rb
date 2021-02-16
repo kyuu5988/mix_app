@@ -17,5 +17,14 @@ class Tweet < ApplicationRecord
     self.image.attached?
   end
 
+
+  #4検索機能
+  def self.search(naiyou) #引数に検索の入力内容が入る
+    if naiyou
+      Tweet.where('text LIKE(?)', "%#{naiyou}%")
+    else
+      Tweet.all #無入力で全部？
+    end
+  end
   
 end
