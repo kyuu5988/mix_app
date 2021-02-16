@@ -1,21 +1,21 @@
-      .content_card
-        .inner_menu
-          /for test
-          /%p.inner_btn ボタン1
+.content_card
+  .inner_menu
+    /for test
+    /%p.inner_btn ボタン1
 
-          .inner_name
-            %p= "#{tweet.user.nick_name}さん"
+    .inner_name
+      %p= "#{xyz.user.nick_name}さん"
           
-          .inner_btns
-            = link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
+    .inner_btns
+      = link_to '詳細', tweet_path(xyz.id),method: :get, class: 'inner_btn'
 
-            - if user_signed_in? && current_user.id == tweet.user_id
-              = link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
-              = link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
+      - if user_signed_in? && current_user.id == xyz.user_id
+        = link_to '編集', edit_tweet_path(xyz.id),method: :get, class: 'inner_btn'          
+        = link_to '削除', tweet_path(xyz.id),method: :delete, class: 'inner_btn'
 
-        .content_text
-          %p= simple_format(tweet.text)
-          / simple_format で改行などをそのまま表示
+  .content_text
+    %p= simple_format(xyz.text)
+    / simple_format で改行などをそのまま表示
 
-        .content_img
-          = image_tag tweet.image.variant(resize:'320x240') if tweet.image.attached?
+  .content_img
+    = image_tag xyz.image.variant(resize:'320x240') if xyz.image.attached?

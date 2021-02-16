@@ -1,0 +1,9 @@
+.content_view
+  .content_title
+    %p 検索結果(kensaku.html.haml)
+  
+  .content_inner
+    - @tweets.each do |tweet|
+      = render "twt", xyz: tweet
+      /= render "呼び出し先", 呼出先用変数: ここのブロック変数
+

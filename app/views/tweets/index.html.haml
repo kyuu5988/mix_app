@@ -4,28 +4,30 @@
   
   .content_inner
     - @tweets.each do |tweet|
-      = render "twt", tweet: tweet
+      /= render "twt", xyz: tweet #部分テンプレ
+      /= render "呼び出し先", 呼出先用変数: ここのブロック変数
 
-      /部分テンプレする前の記述
-      /.content_card
-        /.inner_menu
+      
+      /学習用・部分テンプレ導入前
+      .content_card
+        .inner_menu
           /for test
           /%p.inner_btn ボタン1
 
-          /.inner_name
-            /%p= "#{tweet.user.nick_name}さん"
+          .inner_name
+            %p= "#{tweet.user.nick_name}さん"
           
-          /.inner_btns
-            /= link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
+          .inner_btns
+            = link_to '詳細', tweet_path(tweet.id),method: :get, class: 'inner_btn'
 
-            /- if user_signed_in? && current_user.id == tweet.user_id
-              /= link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
-              /= link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
+            - if user_signed_in? && current_user.id == tweet.user_id
+              = link_to '編集', edit_tweet_path(tweet.id),method: :get, class: 'inner_btn'          
+              = link_to '削除', tweet_path(tweet.id),method: :delete, class: 'inner_btn'
 
-        /.content_text
-          /%p= simple_format(tweet.text)
+        .content_text
+          %p= simple_format(tweet.text)
           / simple_format で改行などをそのまま表示
 
-        /.content_img
-          /= image_tag tweet.image.variant(resize:'320x240') if tweet.image.attached?
+        .content_img
+          = image_tag tweet.image.variant(resize:'320x240') if tweet.image.attached?
 
