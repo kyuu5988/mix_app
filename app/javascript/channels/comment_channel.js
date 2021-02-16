@@ -12,12 +12,20 @@ consumer.subscriptions.create("CommentChannel", {
   // 1, 受け取った情報は、receivedの引数dataに入ります
   received(data) {
     // 2, データをテンプレートリテラルにして、viewに挿入
+    console.log("準備ok")//動作ck
 
-    const html = `%p ${data.content.msg}`;
+    const html = `${data.content.msg}`;
     const messages = document.getElementById('messages');
-    const newMessage = document.getElementById('message_msg');
+    const newMessage = document.getElementById('comment_msg');
     messages.insertAdjacentHTML('afterbegin', html);
     newMessage.value='';
+    
+    console.log("動作ok")//動作ck
+
+    //通常の記述ここまで
+    //不具合対策ここから（メッセージ送信後ボタン1回しか押せない）
+
+    window.location.reload();
   }
 
 });

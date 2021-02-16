@@ -37,12 +37,12 @@
             %p= "#{cmt.user.nick_name}：#{cmt.msg}"
     
     /action cable
-    .comtent_msg2
+    .content_msg2
 
       - if current_user
         %p こっちは action cable機能
-        = form_with(model: [@tweet, @comment], local: true) do |x|
-          =x.text_field :msg
+        = form_with(model: [@tweet, @comment], local: true) do |x|        
+          =x.text_field :msg, autocomplete: "off"
           =x.submit "即書く（こっちも削除出来ません。）"
       - else
         %p ログインをするとコメントを残せるよ！

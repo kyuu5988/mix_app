@@ -49,6 +49,7 @@ class TweetsController < ApplicationController
     #comment機能を追加してからの記述
     @comment = Comment.new
     @comments = @tweet.comments.includes(:user)
+
   end
 
 
@@ -78,4 +79,6 @@ class TweetsController < ApplicationController
     end
   end
 
+
 end
+

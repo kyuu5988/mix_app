@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     #action cable
     #1 以下の1行のみ
     @comment = Comment.new(msg: params[:comment][:msg])
-    # cmt_save = @comment.create(comment_params)
+
     #2 channel作成後
     # メッセージの保存が成功したときに、broadcastを介してメッセージが送信されるように記述
     if Comment.create(comment_params)
