@@ -21,6 +21,7 @@
     
     %p= "最終更新日：#{@tweet.updated_at}"
 
+    /通常のコメント機能
     .content_msg
 
       - if current_user
@@ -34,3 +35,20 @@
         - if @comments
           - @comments.each do |cmt|
             %p= "#{cmt.user.nick_name}：#{cmt.msg}"
+    
+    /action cable
+    .comtent_msg2
+
+      - if current_user
+        %p こっちは action cable機能
+        = form_with(model: [@tweet, @comment], local: true) do |x|
+          =x.text_field :msg
+          =x.submit "即書く（こっちも削除出来ません。）"
+      - else
+        %p ログインをするとコメントを残せるよ！
+      
+      .msg_all#messages
+        - if @comments
+          - @comments.reverse_each do |cmt|
+            %p= "#{cmt.user.nick_name}：#{cmt.msg}"
+
