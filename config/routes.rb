@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   
   #3 検索の機能を追加
   resources :tweets do
+    #resources :comments, only: :create #pic2での記述
+
     collection do
       get 'kensaku'
     end
