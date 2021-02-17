@@ -1,6 +1,6 @@
 .content_view
   .content_title
-    %p 検索結果(kensaku.html.haml)
+    %p= "「#{@key_wd}」の検索結果"
   
   .content_inner
     - @tweets.each do |tweet|

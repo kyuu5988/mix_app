@@ -58,6 +58,9 @@ class TweetsController < ApplicationController
     #binding.pry #検証用 (ターミナルで"params"と入れるとデータ確認できる)
     @tweets = Tweet.search(params[:key_wd])
     #インスタンス変数 = モデル.メソッド(検索内容)→モデル内のメソッド呼び出し
+
+    @key_wd = (params[:key_wd])#userの入力内容を取得(view表示用)
+
   end
 
 

@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   
   #2 基本の７つのアクションのみ
   # resources :tweets
+  # 学習用↓
+  # resources :tweets, only: [:index, :new]
+
   
   #3 検索の機能を追加
   resources :tweets do

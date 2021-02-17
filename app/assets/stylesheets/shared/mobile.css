@@ -1,0 +1,19 @@
+/* スマホ用 */
+@media (max-width: 500px) {
+  .left_main_menu {
+    display: none;
+  }
+  .content_view {
+    width: 100vw;
+
+  }
+
+  .main_content {
+    justify-content: center;
+    width: 100%;
+  }
+
+
+
+
+}
