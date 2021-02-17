@@ -18,7 +18,9 @@
 
     .content_img
       = image_tag @tweet.image.variant(resize:'640x480') if @tweet.image.attached?
-    
+    .content_img_mobil
+      = image_tag @tweet.image.variant(resize:'384x288') if @tweet.image.attached?
+
     %p= "最終更新日：#{@tweet.updated_at}"
 
     /通常のコメント機能

@@ -23,6 +23,7 @@
    height: 50px;
    display: flex;
    justify-content: space-between;
+   align-items: center;
  }
 
  body {
@@ -53,7 +54,7 @@
 }
 
 .header_menu {
-  display: flex;
+  /* display: flex; */
   margin: 10px 20px;
 }
  

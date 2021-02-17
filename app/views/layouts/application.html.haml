@@ -28,7 +28,7 @@
     .search_bar
       = form_with(url: kensaku_tweets_path, local: true, method: :get, class: "search_form")do |x|
 
-        = x.text_field :key_wd, placeholder:"検索する", autocomplete: "off", class: "search_input"
+        = x.text_field :key_wd, placeholder:"検索する",size:8, autocomplete: "off", class: "search_input"
         = x.submit "探す", class: "search_btn"
 
 

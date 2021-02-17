@@ -31,7 +31,6 @@
   border: 2px dotted lightcoral;
   overflow: auto;
   height: 100%;
-  // width: calc(100vw - 150px);
   display: flex;
   flex-wrap: wrap;
 }
@@ -43,12 +42,12 @@
 
 .content_card, .content_card_show {
   border: 2px dotted green;
-  width: 324px;
-  height: 424px;
+  height: 428px;
   margin: 5px;
 }
+
 .content_card_show {
-  height: 470px;
+  height: 474px;
 }
 
 .inner_menu{

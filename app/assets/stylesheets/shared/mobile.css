@@ -1,18 +1,30 @@
 /* スマホ用 */
 @media (max-width: 500px) {
+
   .left_main_menu {
     display: none;
   }
+
   .content_view {
     width: 100vw;
-
   }
 
-  .main_content {
-    justify-content: center;
-    width: 100%;
+  .content_card, .content_card_show {
+    width: calc(100vw - 14px);
   }
 
+  
+  .content_img{
+    display: none;
+  }
+
+  .header_menu{
+    display: none;
+  }
+
+  .search_bar{
+    margin-right: 5px;
+  }
 
 
 
