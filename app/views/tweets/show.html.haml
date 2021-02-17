@@ -16,9 +16,9 @@
         %p= simple_format(@tweet.text)
         / simple_format で改行などをそのまま表示
 
-    .content_img
+    .content_img_pc
       = image_tag @tweet.image.variant(resize:'640x480') if @tweet.image.attached?
-    .content_img_mobil
+    .content_img_mobile
       = image_tag @tweet.image.variant(resize:'384x288') if @tweet.image.attached?
 
     %p= "最終更新日：#{@tweet.updated_at}"

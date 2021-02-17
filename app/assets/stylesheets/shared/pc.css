@@ -14,8 +14,17 @@
 
   }
 
-  .content_img_mobil{
+  .content_img_mobile, .mobile_menu, .mobile_menu_btn{
     display: none;
+  }
+
+  .header_menu{
+    display: block;
+  }
+
+  .menu_btn{
+    margin: 5px;
+    padding: 5px;
   }
 
 

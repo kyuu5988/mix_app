@@ -14,7 +14,7 @@
   }
 
   
-  .content_img{
+  .content_img_pc{
     display: none;
   }
 
@@ -24,6 +24,35 @@
 
   .search_bar{
     margin-right: 5px;
+  }
+
+  .mobile_menu_btn {
+    background-color: lightpink;
+    margin-right: 5px;
+  }
+
+  .mobile_menu{
+    display: grid;
+    flex-direction: column;
+    position: fixed;
+    height: 100px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(12, 10, 10, 0.651);
+    top: 55px;
+    right: 5px;
+    color: blanchedalmond;
+    /* transition: 0.5s; */
+    /* z-index: 100; */
+  }
+
+  .menu_btn {
+    position: relative;
+    top: 1px;
+    left: 1px;
+    margin: 1px;
+    font-size: 20px;
   }
 
 

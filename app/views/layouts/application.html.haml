@@ -32,7 +32,7 @@
         = x.submit "探す", class: "search_btn"
 
 
-    .header_menu
+    .header_menu.mobile_menu
       /user機能追加前の記述
       /= link_to "投稿する", new_tweet_path, class: "menu_btn"
       -if user_signed_in?
@@ -41,8 +41,10 @@
         = link_to "こんにちは。#{current_user.nick_name}さん！", edit_user_registration_path, class: "menu_btn"
       -else
         = link_to "ログイン", new_user_session_path, class: "menu_btn"
-        = link_to "新規登録", new_user_registration_path, class: "menu_btn"      
-  
+        = link_to "新規登録", new_user_registration_path, class: "menu_btn"
+    
+    .mobile_menu_btn
+      %p MENU    
 
   .main_content
     .left_main_menu
