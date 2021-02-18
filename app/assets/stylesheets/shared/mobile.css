@@ -30,9 +30,9 @@
     background-color: lightpink;
     margin-right: 5px;
   }
-
+/* ------------------------------------------------------------------------ */
   .mobile_menu{
-    display: grid;
+    /* display: none; */
     flex-direction: column;
     position: fixed;
     height: 100px;
@@ -43,9 +43,21 @@
     top: 55px;
     right: 5px;
     color: blanchedalmond;
-    /* transition: 0.5s; */
-    /* z-index: 100; */
+    animation: fadeIn 1s linear;
+    animation-fill-mode: both;
   }
+  /* アニメーションの設定 */
+  @keyframes fadeIn{
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+/* ------------------------------------------------------------------------ */
+
 
   .menu_btn {
     position: relative;
@@ -53,6 +65,7 @@
     left: 1px;
     margin: 1px;
     font-size: 20px;
+    
   }
 
 

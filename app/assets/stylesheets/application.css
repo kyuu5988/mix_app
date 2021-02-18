@@ -34,10 +34,12 @@
  a {
   text-decoration: none;
   background-color: black;
- }
+}
 
  a:hover {
   color: #57C3E9;
+  transition: all 1s 0s ease;
+
 }
 
 .main_logo {
